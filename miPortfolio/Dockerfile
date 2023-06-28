@@ -1,5 +1,7 @@
 FROM amazoncorretto:11-alpine-jdk
 
-COPY target/miPortfolio-0.0.1-SNAPSHOT.jar app.jar
+workdir /miPortfolio
 
-ENTRYPOINT ["java","-jar","/app.jar"]
+COPY target/miPortfolio-0.0.1-SNAPSHOT.jar miPortfolio-0.0.1-SNAPSHOT.jar
+
+ENTRYPOINT ["java","-jar","/miPortfolio-0.0.1-SNAPSHOT.jar"]
